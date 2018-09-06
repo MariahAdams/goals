@@ -10,6 +10,7 @@ import Home from './Home';
 import Auth from '../auth/Auth';
 import Goals from '../goals/Goals';
 import GoalForm from '../goals/GoalForm';
+import GoalDetail from '../goals/GoalDetail';
 import styles from './App.css';
 
 class App extends Component {
@@ -42,6 +43,7 @@ class App extends Component {
                   <Route path="/auth" component={Auth}/>
                   <PrivateRoute exact path="/goals" component={Goals}/>
                   <PrivateRoute path="/goals/new" component={GoalForm}/>
+                  <PrivateRoute path="/goals/:id" component={GoalDetail}/>
                   <Redirect to="/"/>
                 </Switch>
               }
