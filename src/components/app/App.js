@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Header from './Header';
 import Home from './Home';
 import Auth from '../auth/Auth';
+import Goals from '../goals/Goals';
 import styles from './App.css';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/auth" component={Auth}/>
+                <Route path="/goals" component={Goals}/>
                 <Redirect to="/"/>
               </Switch>
             </main>

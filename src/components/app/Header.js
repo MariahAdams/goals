@@ -26,12 +26,17 @@ class Header extends Component {
         <nav id="nav-ul">
           <ul>
             <li>
-              <Link to="/">Home</Link>&nbsp;
+              <Link to="/">Home</Link>
+            </li>
+            <li>
               {
                 user
                   ? <Link to="/" onClick={this.handleLogout}>Logout</Link>
                   : <Link to="/auth">Login</Link>
               }
+            </li>
+            <li>
+              <Link to="/goals">Goals</Link>
             </li>
           </ul>
         </nav>
