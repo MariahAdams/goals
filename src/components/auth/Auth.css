@@ -1,4 +1,6 @@
 :local(.auth) {
+
+  margin-top: 60px;
   
   a:hover {
     color: steelblue

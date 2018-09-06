@@ -22,7 +22,6 @@ class Auth extends PureComponent {
 
     return (
       <section className={styles.auth}>
-        <h2>Auth Component</h2>
         <Switch>
           <Route path="/auth/signin" render={() => (
             <div>
