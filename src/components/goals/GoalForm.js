@@ -7,15 +7,11 @@ class GoalForm extends Component {
 
     return (
       <section>
-        <h2>Add a New Goal</h2>
+        <h2>Add a New Goal!</h2>
         <form>
           
           <FormControl label="Name">
             <input name="name"/>
-          </FormControl>
-
-          <FormControl label="Complete?">
-            <input type="checkbox"/>
           </FormControl>
 
           <button>Add</button>
