@@ -7,7 +7,7 @@ export function goalsById(state = {}, { type, payload }) {
   switch(type) {
     case GOALS_LOAD:
       return payload.reduce((map, goal) => {
-        map[goal._id] = {
+        map[goal._id] = { 
           ...state[goal._id],
           ...goal
         };

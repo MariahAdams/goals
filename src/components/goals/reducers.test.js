@@ -2,17 +2,28 @@ import { goalsById, GOALS_LOAD } from './reducers';
 
 describe('goals reducers', () => {
 
-  it.only('initializes to empty object', () => {
-    const state = {};
-    expect(state).toEqual({});
+  const goal1 = {
+    _id: '123',
+    name: 'train for a marathon'
+  };
+
+  const goal2 = {
+    _id: '456',
+    name: 'meal prep'
+  };
+
+  it('initializes to empty object', () => {
+    const state = [];
+    expect(state).toEqual([]);
   });
 
-  it('loads a goal', () => {
-    const data = { name: 'train for a marathon' };
+  it.only('loads all goals', () => {
+    const payload = [goal1, goal2];
     const state = goalsById({}, {
       type: GOALS_LOAD,
-      payload: data
+      payload
     });
-    expect(state).toBe(data);
+    expect(state).toEqual({ '123': goal1, '456': goal2 });
   });
+
 });
