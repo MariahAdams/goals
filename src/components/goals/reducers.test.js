@@ -1,4 +1,5 @@
 import { goalsById, GOALS_LOAD, GOAL_LOAD } from './reducers';
+import { LOGOUT } from '../auth/reducers';
 
 describe('goals reducers', () => {
 
@@ -33,6 +34,13 @@ describe('goals reducers', () => {
       payload
     });
     expect(state).toEqual({ '123': payload });
+  });
+
+  it('clears goals on logout', () => {
+    const state = goalsById({}, {
+      type: LOGOUT
+    });
+    expect(state).toEqual({});
   });
 
 });

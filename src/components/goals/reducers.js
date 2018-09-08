@@ -1,4 +1,4 @@
-// import { LOGOUT } from '../auth/reducers';
+import { LOGOUT } from '../auth/reducers';
 
 export const GOALS_LOAD = 'GOALS_LOAD';
 export const GOAL_LOAD = 'GOAL_LOAD';
@@ -18,6 +18,8 @@ export function goalsById(state = {}, { type, payload }) {
         ...state,
         [payload._id]: payload
       };
+    case LOGOUT:
+      return {};
     default: 
       return state;
   }
