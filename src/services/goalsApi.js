@@ -1,7 +1,7 @@
 import { get, post } from './request';
 
 const URL = '/api';
-const GOALS_URL = `${URL}/goals`;
+const GOALS_URL = `${URL}/me/goals`;
 const AUTH_URL = `${URL}/auth`;
 
 export const getAllGoals = () => get(GOALS_URL);
