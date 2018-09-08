@@ -24,3 +24,14 @@ export function goalsById(state = {}, { type, payload }) {
       return state;
   }
 }
+
+export function goalList(state = [], { type, payload }) {
+  switch(type) {
+    case GOALS_LOAD:
+      return payload.map(goal => goal._id);
+    case LOGOUT:
+      return [];
+    default: 
+      return state;
+  }
+}
