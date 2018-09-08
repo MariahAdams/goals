@@ -3,6 +3,9 @@ import { LOGOUT } from '../auth/reducers';
 export const GOALS_LOAD = 'GOALS_LOAD';
 export const GOAL_LOAD = 'GOAL_LOAD';
 
+export const getGoalsById = state => state.getGoalsById;
+export const getGoalList = state => state.goalList;
+
 export function goalsById(state = {}, { type, payload }) {
   switch(type) {
     case GOALS_LOAD:

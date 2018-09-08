@@ -47,7 +47,7 @@ describe('goals reducers', () => {
 
   });
 
-  describe.only('goalList', () => {
+  describe('goalList', () => {
 
     it('initializes to an empty array', () => {
       const state = [];
