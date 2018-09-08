@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getGoalsById } from './reducers';
 import PropTypes from 'prop-types';
 
 class GoalItem extends Component {
@@ -10,15 +11,19 @@ class GoalItem extends Component {
   };
 
   render() { 
-    // const { goal } = this.props;
+    const { goal } = this.props;
 
     return (
       <li>
         <h4>GOAL ITEM</h4>
-        {/* <Link to={`/goals/${goal._id}`}>{goal.name}</Link> */}
+        <Link to={`/goals/${goal._id}`}>{goal.name}</Link>
       </li>
     );
   }
 }
  
-export default GoalItem;
+export default connect(
+  (state, { id }) => ({
+    goal: getGoalsById(state, id)
+  })
+)(GoalItem);

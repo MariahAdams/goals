@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import FormControl from '../shared/FormControl';
 
-class GoalForm extends Component {
+class GoalForm extends PureComponent {
   
   render() { 
 
