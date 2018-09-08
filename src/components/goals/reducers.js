@@ -1,7 +1,7 @@
 // import { LOGOUT } from '../auth/reducers';
 
 export const GOALS_LOAD = 'GOALS_LOAD';
-
+export const GOAL_LOAD = 'GOAL_LOAD';
 
 export function goalsById(state = {}, { type, payload }) {
   switch(type) {
@@ -13,6 +13,11 @@ export function goalsById(state = {}, { type, payload }) {
         };
         return map;
       }, {});
+    case GOAL_LOAD:
+      return {
+        ...state,
+        [payload._id]: payload
+      };
     default: 
       return state;
   }

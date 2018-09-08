@@ -1,4 +1,4 @@
-import { goalsById, GOALS_LOAD } from './reducers';
+import { goalsById, GOALS_LOAD, GOAL_LOAD } from './reducers';
 
 describe('goals reducers', () => {
 
@@ -17,13 +17,22 @@ describe('goals reducers', () => {
     expect(state).toEqual([]);
   });
 
-  it.only('loads all goals', () => {
+  it('loads all goals', () => {
     const payload = [goal1, goal2];
     const state = goalsById({}, {
       type: GOALS_LOAD,
       payload
     });
     expect(state).toEqual({ '123': goal1, '456': goal2 });
+  });
+
+  it('loads a single goal', () => {
+    const payload = goal1;
+    const state = goalsById({}, {
+      type: GOAL_LOAD,
+      payload
+    });
+    expect(state).toEqual({ '123': payload });
   });
 
 });
